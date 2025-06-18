@@ -1,120 +1,200 @@
 #include <stdio.h>
 
 int main() {
+    // Dados dos jogadores
     char estadoJogador1, estadoJogador2;
     char codigoJogador1[3], codigoJogador2[3];
     char cidadeJogador1[20], cidadeJogador2[20];
     float areaJogador1, areaJogador2;
     float pibJogador1, pibJogador2;
+    int populacaoJogador1, populacaoJogador2;
     int pontosTuristicosJogador1, pontosTuristicosJogador2;
-    long int populacaoJogador1, populacaoJogador2;
+
     float densidadeJogador1, densidadeJogador2;
     float pibPerCapitaJogador1, pibPerCapitaJogador2;
 
-    // Linha decorativa
-    for (int i = 0; i < 30; i++) {
-        printf("-=-");
-    }
+    printf("[SUPER TRUNFO - CIDADES BRASILEIRAS]\n");
 
-    printf("\n[SUPER TRUNFO - CIDADES BRASILEIRAS]\n");
-    
-    for (int i = 0; i < 30; i++) {
-        printf("-=-");
-    }
-
-    printf("\n\n=== Jogador 1 ===\n");
-    printf("Digite a primeira letra do seu estado: ");
+    // Cadastro Jogador 1
+    printf("\n=== Cadastro Jogador 1 ===\n");
+    printf("Primeira letra do estado: ");
     scanf(" %c", &estadoJogador1);
 
-    printf("Digite um código, de 01 à 04: ");
+    printf("Código (ex: 01, 02): ");
     scanf("%2s", codigoJogador1);
 
-    printf("Digite o nome da sua cidade: ");
-    scanf(" %[^\n]", cidadeJogador1);
+    printf("Nome da cidade: ");
+    scanf("%19s", cidadeJogador1);
 
-    printf("Qual a população da sua cidade?: ");
-    scanf("%ld", &populacaoJogador1);
+    printf("População (em número de habitantes): ");
+    scanf("%d", &populacaoJogador1);
 
-    printf("Qual a área da sua cidade em km²?: ");
+    printf("Área da cidade (em km²): ");
     scanf("%f", &areaJogador1);
 
-    printf("Qual o PIB da sua cidade (em bilhões de reais)?: ");
+    printf("PIB da cidade (em bilhões de reais): ");
     scanf("%f", &pibJogador1);
 
-    printf("Quantos pontos turísticos sua cidade tem?: ");
+    printf("Número de pontos turísticos: ");
     scanf("%d", &pontosTuristicosJogador1);
 
-    // Cálculos para Jogador 1
-    densidadeJogador1 = populacaoJogador1 / areaJogador1;
-    pibPerCapitaJogador1 = (pibJogador1 * 1000000000) / populacaoJogador1; // Convertendo PIB de bilhões para reais
-
-    printf("\n=== Jogador 2 ===\n");
-    printf("Digite a primeira letra do seu estado: ");
+    // Cadastro Jogador 2
+    printf("\n=== Cadastro Jogador 2 ===\n");
+    printf("Primeira letra do estado: ");
     scanf(" %c", &estadoJogador2);
 
-    printf("Digite um código, de 01 à 04: ");
+    printf("Código (ex: 01, 02): ");
     scanf("%2s", codigoJogador2);
 
-    printf("Digite o nome da sua cidade: ");
-    scanf(" %[^\n]", cidadeJogador2);
+    printf("Nome da cidade: ");
+    scanf("%19s", cidadeJogador2);
 
-    printf("Qual a população da sua cidade?: ");
-    scanf("%ld", &populacaoJogador2);
+    printf("População (em número de habitantes): ");
+    scanf("%d", &populacaoJogador2);
 
-    printf("Qual a área da sua cidade em km²?: ");
+    printf("Área da cidade (em km²): ");
     scanf("%f", &areaJogador2);
 
-    printf("Qual o PIB da sua cidade (em bilhões de reais)?: ");
+    printf("PIB da cidade (em bilhões de reais): ");
     scanf("%f", &pibJogador2);
 
-    printf("Quantos pontos turísticos sua cidade tem?: ");
+    printf("Número de pontos turísticos: ");
     scanf("%d", &pontosTuristicosJogador2);
 
-    // Cálculos para Jogador 2
+    // Cálculos derivados
+    densidadeJogador1 = populacaoJogador1 / areaJogador1;
     densidadeJogador2 = populacaoJogador2 / areaJogador2;
-    pibPerCapitaJogador2 = (pibJogador2 * 1000000000) / populacaoJogador2; // Convertendo PIB de bilhões para reais
 
-    for (int i = 0; i < 30; i++) {
-        printf("-=-");
-    }
+    pibPerCapitaJogador1 = (pibJogador1 * 1000000000) / populacaoJogador1;
+    pibPerCapitaJogador2 = (pibJogador2 * 1000000000) / populacaoJogador2;
 
-    printf("\n\n=== Carta do Jogador 1 ===\n");
-    for (int i = 0; i < 30; i++) {
-        printf("-=-");
-    }
-    printf("\nEstado: %c\n", estadoJogador1);
-    printf("Código: %c%s\n", estadoJogador1, codigoJogador1);
-    printf("Cidade: %s\n", cidadeJogador1);
-    printf("População: %ld habitantes\n", populacaoJogador1);
+    // Exibição das Cartas
+    printf("\n================ CARTAS =================\n");
+
+    printf("\nJogador 1 - %s (%c%s)\n", cidadeJogador1, estadoJogador1, codigoJogador1);
+    printf("População: %d habitantes\n", populacaoJogador1);
     printf("Área: %.2f km²\n", areaJogador1);
-    printf("Densidade Populacional: %.2f hab/km²\n", densidadeJogador1);
-    printf("PIB: R$ %.2f bilhões\n", pibJogador1);
-    printf("PIB per capita: R$ %.2f\n", pibPerCapitaJogador1);
+    printf("PIB: %.2f bilhões\n", pibJogador1);
     printf("Pontos Turísticos: %d\n", pontosTuristicosJogador1);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidadeJogador1);
+    printf("PIB per Capita: R$ %.2f\n", pibPerCapitaJogador1);
 
-    for (int i = 0; i < 30; i++) {
-        printf("-=-");
-    }
-
-    printf("\n\n=== Carta do Jogador 2 ===\n");
-    for (int i = 0; i < 30; i++) {
-        printf("-=-");
-    }
-    printf("\nEstado: %c\n", estadoJogador2);
-    printf("Código: %c%s\n", estadoJogador2, codigoJogador2);
-    printf("Cidade: %s\n", cidadeJogador2);
-    printf("População: %ld habitantes\n", populacaoJogador2);
+    printf("\nJogador 2 - %s (%c%s)\n", cidadeJogador2, estadoJogador2, codigoJogador2);
+    printf("População: %d habitantes\n", populacaoJogador2);
     printf("Área: %.2f km²\n", areaJogador2);
-    printf("Densidade Populacional: %.2f hab/km²\n", densidadeJogador2);
-    printf("PIB: R$ %.2f bilhões\n", pibJogador2);
-    printf("PIB per capita: R$ %.2f\n", pibPerCapitaJogador2);
+    printf("PIB: %.2f bilhões\n", pibJogador2);
     printf("Pontos Turísticos: %d\n", pontosTuristicosJogador2);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidadeJogador2);
+    printf("PIB per Capita: R$ %.2f\n", pibPerCapitaJogador2);
 
-    for (int i = 0; i < 30; i++) {
-        printf("-=-");
+    // Menu de Comparações
+    int escolha;
+    printf("\n=========== MENU DE COMPARAÇÃO ===========\n");
+    printf("1 - Comparar por um único atributo (if/else)\n");
+    printf("2 - Comparar múltiplos atributos (switch + operadores lógicos)\n");
+    printf("3 - Comparar dois atributos + operador ternário\n");
+    printf("Escolha uma opção: ");
+    scanf("%d", &escolha);
+
+    switch (escolha) {
+        case 1: {
+            printf("\nQual atributo deseja comparar?\n");
+            printf("1 - População\n");
+            printf("2 - PIB\n");
+            printf("3 - Área\n");
+            printf("4 - Pontos Turísticos\n");
+            int atributo;
+            printf("Digite a opção: ");
+            scanf("%d", &atributo);
+
+            if (atributo == 1) {
+                if (populacaoJogador1 > populacaoJogador2)
+                    printf("Jogador 1 vence na População!\n");
+                else if (populacaoJogador2 > populacaoJogador1)
+                    printf("Jogador 2 vence na População!\n");
+                else
+                    printf("Empate na População!\n");
+            } else if (atributo == 2) {
+                if (pibJogador1 > pibJogador2)
+                    printf("Jogador 1 vence no PIB!\n");
+                else if (pibJogador2 > pibJogador1)
+                    printf("Jogador 2 vence no PIB!\n");
+                else
+                    printf("Empate no PIB!\n");
+            } else if (atributo == 3) {
+                if (areaJogador1 > areaJogador2)
+                    printf("Jogador 1 vence na Área!\n");
+                else if (areaJogador2 > areaJogador1)
+                    printf("Jogador 2 vence na Área!\n");
+                else
+                    printf("Empate na Área!\n");
+            } else if (atributo == 4) {
+                if (pontosTuristicosJogador1 > pontosTuristicosJogador2)
+                    printf("Jogador 1 vence nos Pontos Turísticos!\n");
+                else if (pontosTuristicosJogador2 > pontosTuristicosJogador1)
+                    printf("Jogador 2 vence nos Pontos Turísticos!\n");
+                else
+                    printf("Empate nos Pontos Turísticos!\n");
+            } else {
+                printf("Atributo inválido!\n");
+            }
+            break;
+        }
+
+        case 2: {
+            printf("\nEscolha o tipo de comparação múltipla:\n");
+            printf("1 - População E Área (ambos precisam ser maiores)\n");
+            printf("2 - PIB OU Pontos Turísticos (basta um ser maior)\n");
+            int tipo;
+            printf("Digite a opção: ");
+            scanf("%d", &tipo);
+
+            switch (tipo) {
+                case 1:
+                    if ((populacaoJogador1 > populacaoJogador2) && (areaJogador1 > areaJogador2))
+                        printf("Jogador 1 vence por ter mais População E mais Área!\n");
+                    else if ((populacaoJogador2 > populacaoJogador1) && (areaJogador2 > areaJogador1))
+                        printf("Jogador 2 vence por ter mais População E mais Área!\n");
+                    else
+                        printf("Ninguém venceu. Nenhum jogador tem os dois atributos maiores.\n");
+                    break;
+
+                case 2:
+                    if ((pibJogador1 > pibJogador2) || (pontosTuristicosJogador1 > pontosTuristicosJogador2))
+                        printf("Jogador 1 vence por ter maior PIB ou mais pontos turísticos!\n");
+                    else if ((pibJogador2 > pibJogador1) || (pontosTuristicosJogador2 > pontosTuristicosJogador1))
+                        printf("Jogador 2 vence por ter maior PIB ou mais pontos turísticos!\n");
+                    else
+                        printf("Empate!\n");
+                    break;
+
+                default:
+                    printf("Opção inválida!\n");
+            }
+            break;
+        }
+
+        case 3: {
+            printf("\nComparação com dois atributos usando operador ternário (PIB per capita E Densidade Populacional):\n");
+
+            int jogador1Vence = (pibPerCapitaJogador1 > pibPerCapitaJogador2) && (densidadeJogador1 > densidadeJogador2) ? 1 : 0;
+            int jogador2Vence = (pibPerCapitaJogador2 > pibPerCapitaJogador1) && (densidadeJogador2 > densidadeJogador1) ? 1 : 0;
+
+            if (jogador1Vence)
+                printf("Jogador 1 vence por ter maior PIB per capita E maior Densidade!\n");
+            else if (jogador2Vence)
+                printf("Jogador 2 vence por ter maior PIB per capita E maior Densidade!\n");
+            else
+                printf("Nenhum jogador venceu! Ninguém teve os dois atributos maiores ao mesmo tempo.\n");
+
+            break;
+        }
+
+        default:
+            printf("Opção inválida!\n");
     }
 
-    printf("\n\nFim do jogo! Obrigado por jogar Super Trunfo - Cidades Brasileiras!\n");
+    printf("\n==== FIM DO JOGO ====\n");
 
     return 0;
 }
