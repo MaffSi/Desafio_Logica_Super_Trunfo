@@ -1,4 +1,4 @@
-*** Desafio Lógia Super Trunfo ***
+*** Desafio Lógica Super Trunfo ***
 - Repositório criado para o desafio de lógica super trunfo, da matéria de introudção a programação, do curso de Ciências da Computação.
 
 
